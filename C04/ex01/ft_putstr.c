@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungwol <seungwol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 20:17:25 by seungwol          #+#    #+#             */
-/*   Updated: 2022/02/09 11:05:07 by seungwol         ###   ########.fr       */
+/*   Created: 2022/02/12 11:32:31 by seungwol          #+#    #+#             */
+/*   Updated: 2022/02/12 17:53:18 by seungwol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] -= 32;
-		}
+		write(1, &str[i], 1);
 		i ++;
 	}
-	return (str);
 }
